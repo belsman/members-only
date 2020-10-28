@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   include PostsHelper
-  before_action :authenticate_user!, only: [:create, :new]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: %i[create new]
+  before_action :set_post, only: %i[show edit update destroy]
 
   # GET /posts
   # GET /posts.json
@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
-
 
   # POST /posts
   # POST /posts.json
