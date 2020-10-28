@@ -16,6 +16,13 @@
     <% if flash[:alert]%>
       <p class="alert"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <header>
+      <ul>
+        <li>
+          <%= link_to 'New Post', new_post_path %>
+        </li>
+      </ul>
+    </header>
+     <%= yield %>
   </body>
 </html>
