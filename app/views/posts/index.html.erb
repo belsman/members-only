@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <% @posts.each do |post| %>
-  <div>
+  <article>
     <h3><%= post.title %></h3>
     <p><%= distance_of_time_in_words(@time_now, post.created_at) %> ago</p></p>
     <p><%= post.body %></p>
@@ -9,6 +9,6 @@
     <% if user_signed_in? %>
       <p><%= post.user.name %></p>
     <% end %>
-  </div>
+  </article>
 <% end %>
 
