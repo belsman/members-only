@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="d-flex">
+      <ul>
+        <li>
+          <%= link_to 'Posts', posts_path %>
+        </li>
+      </ul>
+      <ul class="d-flex">
+        <li>
+          <%= link_to 'New Post', new_post_path %>
+        </li>
+        <%if user_signed_in?%>
+          <li class="mr-30">
+            <%= link_to 'Sign Out', destroy_user_session_path, method: "delete" %>          
+          </li>
+        <% else %>
+          <li class="mr-30">
+            <%= link_to 'Sign In', new_user_session_path %>
+          </li>
+        <% end %>
+      </ul>
+    </header>
+     <%= yield %>
   </body>
 </html>
